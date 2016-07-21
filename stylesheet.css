@@ -1,0 +1,7 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto+Slab);
+.stylejumbo {
+    font-family: 'Roboto Slab', sans-serif;
+    text-align: center;
+    border: solid 1px rgba(160, 0, 0, 0.2);
+    box-shadow: 0 0 5px black;
+}
