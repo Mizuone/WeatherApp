@@ -4,20 +4,24 @@ if(typeof(WeatherSpace === "undefined")) {
 }
 $(document).ready(function() {
     WeatherSpace = function() {
-        var openurlLat = "http://api.openweathermap.org/data/2.5/find?lat=",
+        var openurlLat = "http://api.openweathermap.org/data/2.5/weather?lat=",
             openurlLong = "&lon=",
-            openurlAPI = "&cnt=10&units=imperial&appid=21a26e9b5858ddbb099ad4c5a96bd377",
+            openurlAPI = "&units=imperial&appid=21a26e9b5858ddbb099ad4c5a96bd377",
             fTemp = true;
             $.getJSON("http://ip-api.com/json", function(data) {
                 var positionLat = data["lat"];
                 var positionLong = data["lon"];
+                console.log(positionLat);
+                console.log(positionLong);
                 var weatherAPI = openurlLat + positionLat + openurlLong + positionLong + openurlAPI;
+              console.log(weatherAPI);
                 $.getJSON(weatherAPI, function(json) {
-                    let weatherTemp = json.list[0].main.temp,
-                        weatherLocation = json.list[0].name,
-                        weatherCondition = json.list[0].weather[0].description,
-                        weatherWD = json.list[0].wind.deg,
-                        weatherWindSpeed = json.list[0].wind.speed,
+                  console.log(json);
+                    let weatherTemp = json["main"].temp,
+                        weatherLocation = json.name,
+                        weatherCondition = json["weather"][0].description,
+                        weatherWD = json["wind"].deg,
+                        weatherWindSpeed = json["wind"].speed,
                         checkTemp = false;
                     
                     switch(true) {
@@ -34,7 +38,7 @@ $(document).ready(function() {
                         default: weatherWD = "null"; break;
                     }
                     if (weatherCondition == "Sky is Clear" || weatherCondition == "few clouds" || weatherCondition == "broken clouds"
-                        || weatherCondition == "scattered clouds") {
+                        || weatherCondition == "scattered clouds" || weatherCondition == "overcast clouds" || weatherCondition == "fog") {
                         $(".stylejumbo").css({
                             "background-image": "url(https://gojacobsons.files.wordpress.com/2014/09/img_8643.jpg)",
                             "background-size": "1150px 800px",
