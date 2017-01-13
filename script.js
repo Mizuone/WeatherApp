@@ -66,21 +66,21 @@ $(document).ready(function() {
                       $(".stylejumbo h1").css({
                           "text-shadow": "0px 0px 2px red, 1px 1px 5px rgb(255, 103, 0)"
                       });
-                      $(".stylejumbo li").css({
+                      $(".stylejumbo li, .buttonstyle").css({
                           "background-color": "rgba(255, 150, 125, 0.3)"
                       });
                     } else if (weatherTemp >= 60 && weatherTemp < 80) {
                       $(".stylejumbo h1").css({
                           "text-shadow": "0px 0px 2px yellow, 1px 1px 5px rgb(212, 255, 0)"
                       });
-                      $(".stylejumbo li").css({
+                      $(".stylejumbo li, .buttonstyle").css({
                           "background-color": "rgba(255, 150, 125, 0.3)"
                       })
                     } else {
                       $(".stylejumbo h1").css({
                           "text-shadow": "0px 0px 2px rgb(23, 175, 255), 1px 1px 5px blue"
                       });
-                      $(".stylejumbo li").css({
+                      $(".stylejumbo li, .buttonstyle").css({
                           "background-color": "rgba(23, 175, 255, 0.3)"
                       });
                     }
