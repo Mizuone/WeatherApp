@@ -44,11 +44,12 @@ li {
     border: black solid 1px;
     box-shadow: 0 0 2px black;
     text-shadow: 0px 0px 2px black, 0 0 2px black;
-    color: aqua;
+    color: white;
     cursor: default;
 }
 .buttonstyle:hover {
-    box-shadow: 0 0 5px aqua;
+    box-shadow: 0 0 5px skyblue;
+    cursor: pointer;
 }
 @media screen and (max-width: 600px) {
     li {
